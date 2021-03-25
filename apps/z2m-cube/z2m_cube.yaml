@@ -1,0 +1,72 @@
+Z2Mcube:
+  module: z2m_cube
+  class: Z2Mcube
+  cube: sensor.az_cube_action
+  actions: >-
+    {
+      "tap": [
+          {
+              "5": [
+                  {
+                      "service": "input_boolean.toggle",
+                      "entity": "input_boolean.overwrite_arbeitszimmer"
+                  }
+              ],
+              "1": [
+                  {
+                      "service": "switch.toggle",
+                      "entity": "switch.monitorlampe"
+                  }
+              ],
+              "4": [
+                  {
+                      "service": "homeassistant.toggle",
+                      "entity": "group.az_displays"
+                  }
+              ],
+              "3": [
+                  {
+                      "service": "script.turn_on",
+                      "entity": "script.az_cube_trigger_gaming"
+                  }
+              ]
+          }
+      ],
+      "rotate_left": [
+          {
+              "5": [
+                  {
+                      "service": "light.turn_on",
+                      "entity": "light.office_lights"
+                  }
+              ],
+              "3": [
+                  {
+                      "service": "light.turn_on",
+                      "entity": "light.office_lights"
+                  }
+              ]
+          }
+      ],
+      "rotate_right": [
+          {
+              "5": [
+                  {
+                      "service": "light.turn_on",
+                      "entity": "light.office_lights"
+                  }
+              ],
+              "3": [
+                  {
+                      "service": "light.turn_on",
+                      "entity": "light.office_lights"
+                  }
+              ]              
+          }
+      ]
+    }
+    
+  global_dependencies:
+   - globals
+   #
+
